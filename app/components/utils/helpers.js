@@ -4,33 +4,35 @@ var axios = require("axios");
 // ny times api key
 var authKey = "989a9ab61bbf4006a7725dd8ba3eafbe";
 
-// where do these come from?
-/*
-var searchTerm = 
-var startYear = 
-var endYear = 
-*/
+// temp placeholder
+var startYear = 2016 
+var endYear = 2017
+
 
 // Helper functions for making API Calls
 var helper = {
 
   // This function serves our purpose of running the query to geolocate.
-  runQuery: function(location) {
+  runQuery: function(term) {
 
-    console.log(location);
+    console.log(term);
 
     // create queryURL
-    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+authKey+"&q="+searchTerm+"&begin_date="+startYear+"0101&end_date="+endYear+"1231"
+    var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+authKey+"&q="+term+"&begin_date="+startYear+"0101&end_date="+endYear+"1231"
     return axios.get(queryURL).then(function(response) {
+      console.log(response)
       // If get get a result, return that result's formatted address property
-      if (response.data.results[0]) {
-        //return response.data.results[0].formatted;
+      if (response.data.response) {
+        return response.data.response.formatted;
+        console.log("response")
+        console.log(response.data.response.formatted)
       }
       // If we don't get any results, return an empty string
+      console.log("error")
       return "";
     });
   },
-
+/*
   // This function hits our own server to retrieve the record of query results
   getHistory: function() {
     //return axios.get("/api");
@@ -40,6 +42,7 @@ var helper = {
   postHistory: function(location) {
     //return axios.post("/api", { location: location });
   }
+*/
 };
 
 // We export the API helper

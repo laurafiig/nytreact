@@ -24,7 +24,7 @@ app.use(express.static("./public"));
 // -------------------------------------------------
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://admin:codingrocks@ds023664.mlab.com:23664/nytimes");
+mongoose.connect("mongodb://localhost/nytimes");
 //mongoose.connect("mongodb://heroku_n81w02fc:emdrtjsilq1vu576igldh16de5@ds111559.mlab.com:11559/heroku_n81w02fc");
 var db = mongoose.connection;
 
@@ -42,7 +42,7 @@ db.once("open", function() {
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
-/*
+
 // This is the route we will send GET requests to retrieve our most recent search data.
 // We will call this route the moment our page gets rendered
 app.get("/api", function(req, res) {
@@ -78,7 +78,7 @@ app.post("/api", function(req, res) {
     }
   });
 });
-*/
+
 // -------------------------------------------------
 
 // Listener
