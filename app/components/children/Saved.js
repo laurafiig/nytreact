@@ -12,8 +12,14 @@ var Saved = React.createClass({
         </div>
         <div className="panel-body text-center">
 
-          {/* Replace with saved and commented articles */}
-          
+           {/* Here we use a map function to loop through an array in JSX */}
+         {/*
+          {this.props.saved.map(function(search, i) {
+            return (
+              <p key={i}>{search.title}</p>
+            );
+          })}
+          */}
         </div>
       </div>
     );

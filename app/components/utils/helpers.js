@@ -23,9 +23,9 @@ var helper = {
       console.log(response)
       // If get get a result, return that result's formatted address property
       if (response.data.response) {
-        return response.data.response.formatted;
+        return response.formatted;
         console.log("response")
-        console.log(response.data.response.formatted)
+        console.log(response.formatted)
       }
       // If we don't get any results, return an empty string
       console.log("error")

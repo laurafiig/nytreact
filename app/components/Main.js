@@ -36,7 +36,7 @@ var Main = React.createClass({
 
     // Run the query for the address
     helpers.runQuery(this.state.searchTerm).then(function(data) {
-      if (data !== this.state.results) {
+      //if (data !== this.state.results) {
         console.log("Response", data);
         this.setState({ results: data });
 /*
@@ -55,7 +55,7 @@ var Main = React.createClass({
           }.bind(this));
         }.bind(this));
 */        
-      }
+      //}
     }.bind(this));
   },
   

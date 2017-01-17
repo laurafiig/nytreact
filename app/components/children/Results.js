@@ -13,7 +13,14 @@ var Results = React.createClass({
         </div>
         <div className="panel-body text-center">
           <p></p>
-         {/* cycle thru search results and print */}  
+          {/* Here we use a map function to loop through an array in JSX */}
+         {/*
+          {this.props.results.map(function(search, i) {
+            return (
+              <p key={i}>{search.title}</p>
+            );
+          })}
+          */}
                  
         </div>
       </div>
